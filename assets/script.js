@@ -67,14 +67,14 @@ const images = ["slide1.jpg", "slide2.jpg", "slide3.jpg", "slide4.png"]
 
 function nextImage() {
 	i = i++
-	document.querySelector(".banner-img").src = "./assets/images/slideshow/" + images[i];
+	document.querySelector(".banner-img").src = "../../assets/images/slideshow/" + images[i];
 
 }
 nextArrow.addEventListener("click", nextImage)
 
 function prevImage() {
 	i = i--
-	document.querySelector(".banner-img").src = "./assets/images/slideshow/" + images[i];
+	document.querySelector(".banner-img").src = "../../assets/images/slideshow/" + images[i];
 
 }
 prevArrow.addEventListener("click", prevImage)
