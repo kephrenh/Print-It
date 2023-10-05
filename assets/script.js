@@ -1,24 +1,25 @@
 const slides = [
-	// {
-	// 	"image":"slide1.jpg",
-	// 	"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
-	// },
-	// {
-	// 	"image":"slide2.jpg",
-	// 	"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
-	// },
-	// {
-	// 	"image":"slide3.jpg",
-	// 	"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
-	// },
-	// {
-	// 	"image":"slide4.png",
-	// 	"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
-	// }
+	{
+		"image":"slide1.jpg",
+		"tagLine":"Impressions tous formats <dot>en boutique et en ligne</dot>"
+	},
+	{
+		"image":"slide2.jpg",
+		"tagLine":"Tirages haute définition grand format <dot>pour vos bureaux et events</dot>"
+	},
+	{
+		"image":"slide3.jpg",
+		"tagLine":"Grand choix de couleurs <dot>de CMJN aux pantones</dot>"
+	},
+	{
+		"image":"slide4.png",
+		"tagLine":"Autocollants <dot>avec découpe laser sur mesure</dot>"
+	}
 ]
 
 const nbSlide = slides.length;
 const banner = document.getElementById("banner");
+
 let i = 0;
 
 // arrows
@@ -48,3 +49,27 @@ nextArrow.addEventListener("click", ()=> {
 	console.log("Next slide !")
 })
 
+// dots
+function createDots() {
+
+	for(let i = 0; i < nbSlide; i++) {
+		const dots = document.querySelector(".dots");
+		const dot = document.createElement("span");
+		dot.classList.add("dot");
+		dots.appendChild(dot);
+	}
+}
+createDots();
+
+function selectedDot() {
+	const listDots = document.querySelectorAll(".dot");
+	const nbDot = listDots.length;
+	for(let i = 0; i < nbDot; i++) {
+		const dot = listDots[i];
+
+		if(i === 0) {
+			dot.classList.add("dot_selected")
+		}
+	}
+}
+selectedDot();
