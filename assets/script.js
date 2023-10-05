@@ -37,3 +37,14 @@ function createArrows () {
 }
 createArrows();
 
+const prevArrow = document.querySelector(".arrow_left");
+const nextArrow = document.querySelector(".arrow_right");
+
+prevArrow.addEventListener("click", ()=> {
+	console.log("Previous slide !")
+})
+
+nextArrow.addEventListener("click", ()=> {
+	console.log("Next slide !")
+})
+
