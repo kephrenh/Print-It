@@ -41,12 +41,34 @@ createArrows();
 const prevArrow = document.querySelector(".arrow_left");
 const nextArrow = document.querySelector(".arrow_right");
 
+
 prevArrow.addEventListener("click", ()=> {
 	console.log("Previous slide !")
+	dotSpan[i].classList.remove("dot_selected");
+	
+	if(i === 0) {
+		i = nbSlide - 1
+	} else {
+		i--;
+	}
+
+	dotSpan[i].classList.add("dot_selected");
+	carousel();
 })
 
 nextArrow.addEventListener("click", ()=> {
 	console.log("Next slide !")
+
+	dotSpan[i].classList.remove("dot_selected");
+	
+	if(i === nbSlide - 1) {
+		i = 0
+	} else {
+		i++;
+	}
+
+	dotSpan[i].classList.add("dot_selected");
+	carousel();
 })
 
 // dots
@@ -73,3 +95,18 @@ function selectedDot() {
 	}
 }
 selectedDot();
+
+const dotSpan = document.querySelectorAll(".dots span");
+
+
+// carousel
+function carousel() {
+	const slide = slides[i];
+	const image = document.querySelector(".banner-img");
+	const tagLine = document.querySelector("#banner p");
+	tagLine.classList.add("banner-txt");
+
+	image.src = "./assets/images/slideshow/" + slide.image;
+	const tagLineValue = slide.tagLine;
+	tagLine.innerHTML = tagLineValue;
+}
